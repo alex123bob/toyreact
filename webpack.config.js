@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: {
         main: './main.js'
@@ -26,5 +27,11 @@ module.exports = {
     mode: 'development',
     optimization: {
         minimize: false
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'toy-react',
+            template: 'main.html',
+        })
+    ],
 }
