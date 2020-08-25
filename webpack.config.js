@@ -1,8 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 module.exports = {
     entry: {
         main: './main.js'
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -34,4 +36,10 @@ module.exports = {
             template: 'main.html',
         })
     ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        port: 9000,
+        hot: true,
+        open: true
+    }
 }
