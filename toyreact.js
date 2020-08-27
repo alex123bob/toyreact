@@ -49,7 +49,7 @@ export class Component {
         let update = (oldNode, newNode) => {
             // type, props, children
             // #text content
-            if (isSameNode(oldNode, newNode)) {
+            if (!isSameNode(oldNode, newNode)) {
                 newNode[RENDER_TO_DOM](oldNode._range);
                 return;
             }
